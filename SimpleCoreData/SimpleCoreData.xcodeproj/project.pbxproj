@@ -14,6 +14,8 @@
 		558693061E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 558693041E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld */; };
 		558693081E8B40CF00B1B752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558693071E8B40CF00B1B752 /* Assets.xcassets */; };
 		5586930B1E8B40CF00B1B752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558693091E8B40CF00B1B752 /* LaunchScreen.storyboard */; };
+		558693161E8B447E00B1B752 /* Student+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693131E8B447E00B1B752 /* Student+CoreDataClass.m */; };
+		558693171E8B447E00B1B752 /* Student+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		558693071E8B40CF00B1B752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5586930A1E8B40CF00B1B752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5586930C1E8B40CF00B1B752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		558693121E8B447E00B1B752 /* Student+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataClass.h"; sourceTree = "<group>"; };
+		558693131E8B447E00B1B752 /* Student+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataClass.m"; sourceTree = "<group>"; };
+		558693141E8B447E00B1B752 /* Student+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataProperties.h"; sourceTree = "<group>"; };
+		558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,10 @@
 		558692F71E8B40CF00B1B752 /* SimpleCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				558693121E8B447E00B1B752 /* Student+CoreDataClass.h */,
+				558693131E8B447E00B1B752 /* Student+CoreDataClass.m */,
+				558693141E8B447E00B1B752 /* Student+CoreDataProperties.h */,
+				558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */,
 				558692FB1E8B40CF00B1B752 /* AppDelegate.h */,
 				558692FC1E8B40CF00B1B752 /* AppDelegate.m */,
 				558692FE1E8B40CF00B1B752 /* ViewController.h */,
@@ -155,8 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				558693061E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld in Sources */,
+				558693171E8B447E00B1B752 /* Student+CoreDataProperties.m in Sources */,
 				558693001E8B40CF00B1B752 /* ViewController.m in Sources */,
 				558692FD1E8B40CF00B1B752 /* AppDelegate.m in Sources */,
+				558693161E8B447E00B1B752 /* Student+CoreDataClass.m in Sources */,
 				558692FA1E8B40CF00B1B752 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
