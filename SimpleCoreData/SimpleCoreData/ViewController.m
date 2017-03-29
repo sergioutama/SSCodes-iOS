@@ -16,16 +16,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonAdd;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSArray *fetchedStudents;
+@property (strong, nonatomic) NSArray *students;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupCoreData];
+    [self setupData];
+    [self fetchData];
     [self setupUI];
-    [self fetchCoreData];
     [self.tableView reloadData];
 }
 
@@ -36,22 +36,10 @@
     [self.buttonAdd addTarget:self action:@selector(buttonAddTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setupCoreData {
-//    Method 1 - Accessing AppDelegate to retrieve NSManagedObjectContext
-//    Generally accessing AppDelegate is an expensive operation and should be avoided if possible
-    
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    self.managedObjectContext = [appDelegate managedObjectContext];
-    
-//    Method 3 - Using Singleton
+- (void)setupData {
+
     self.managedObjectContext = [[CoreDataManager shared] managedObjectContext];
 }
-
-//- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;{
-//// Method 2 - Set NSManagedObjectContext from the class who present this ViewController
-//// Better than accessing AppDelegate however this is not intuitive
-//    _managedObjectContext = managedObjectContext;
-//}
 
 #pragma mark - Actions
 - (void)buttonAddTapped:(UIButton *)sender {
@@ -67,33 +55,44 @@
         return;
     }
     
-    [self fetchCoreData];
+    [self fetchData];
     [self.tableView reloadData];
 
 }
 
-- (void)fetchCoreData {
+- (void)fetchData {
     
     NSFetchRequest *studentFetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Student"];
     
+    
+    // set predicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@""];
+    [studentFetchRequest setPredicate:predicate];
+    
+
+    
     NSError *fetchError = NULL;
+    
     NSArray *fetchResults = [self.managedObjectContext executeFetchRequest:studentFetchRequest error:&fetchError];
+    
     if (fetchError) {
         NSLog(@"Error fetching from to CoreData : %@, because : %@",fetchError.localizedDescription,fetchError.localizedFailureReason);
         return;
     }
-    self.fetchedStudents = fetchResults;
+    
+    
+    self.students = fetchResults;
 }
 
 #pragma mark - UITableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.fetchedStudents.count;
+    return self.students.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCell" forIndexPath:indexPath];
     
-    Student *student = self.fetchedStudents[indexPath.row];
+    Student *student = self.students[indexPath.row];
     cell.textLabel.text = student.name;
     
     return  cell;

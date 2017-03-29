@@ -7,7 +7,7 @@
 //
 
 #import "Student+CoreDataClass.h"
-
+#import "Teacher+CoreDataClass.h"
 @implementation Student
 
 @end

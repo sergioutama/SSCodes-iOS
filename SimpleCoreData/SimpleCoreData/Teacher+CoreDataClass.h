@@ -1,5 +1,5 @@
 //
-//  Student+CoreDataClass.h
+//  Teacher+CoreDataClass.h
 //  SimpleCoreData
 //
 //  Created by Sergio Utama on 29/03/2017.
@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Teacher;
+@class Student;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Student : NSManagedObject
+@interface Teacher : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "Student+CoreDataProperties.h"
+#import "Teacher+CoreDataProperties.h"

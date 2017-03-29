@@ -1,0 +1,129 @@
+//
+//  TeacherViewController.m
+//  SimpleCoreData
+//
+//  Created by Sergio Utama on 29/03/2017.
+//  Copyright © 2017 Sergio Utama. All rights reserved.
+//
+
+#import "TeacherViewController.h"
+#import "Teacher+CoreDataClass.h"
+#import "CoreDataManager.h"
+#import "ViewController.h"
+
+@interface TeacherViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *buttonAdd;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *teachers;
+@property (strong, nonatomic) NSManagedObjectContext *context;
+@end
+
+@implementation TeacherViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupUI];
+    [self fetchTeachers];
+    [self.tableView reloadData];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Setup
+- (void)setupUI {
+    
+    [self.buttonAdd addTarget:self action:@selector(buttonAddTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    self.context = [[CoreDataManager shared] managedObjectContext];
+    
+}
+
+#pragma mark - Actions
+- (void)buttonAddTapped:(UIButton *)sender {
+    // save to database
+    Teacher *newTeacher = (Teacher *)[NSEntityDescription insertNewObjectForEntityForName:@"Teacher" inManagedObjectContext:self.context];
+    
+    newTeacher.name = self.textField.text;
+    
+    NSError *saveError = NULL;
+    [self.context save:&saveError];
+    if (saveError) {
+        NSLog(@"ErrorSaving %@ | Description : %@ | Reason : %@",self.textField.text,saveError.localizedDescription,saveError.localizedFailureReason);
+        return;
+    }
+    
+    [self fetchTeachers];
+    [self.tableView reloadData];
+    
+}
+
+- (void)fetchTeachers {
+    // fetch all the teachers
+    
+    NSFetchRequest *teacherFetchRequest = [Teacher fetchRequest];
+    
+    NSError *fetchError = NULL;
+    NSArray *fetchedObjects = [self.context executeFetchRequest:teacherFetchRequest error:&fetchError];
+    
+    if (fetchError) {
+        NSLog(@"ErrorFethcing | Description : %@ | Reason : %@",fetchError.localizedDescription,fetchError.localizedFailureReason);
+        return;
+    }
+    
+    self.teachers = fetchedObjects;
+}
+
+
+#pragma mark - UITableView DataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.teachers.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TeacherCell" forIndexPath:indexPath];
+    
+    Teacher *teacher = self.teachers[indexPath.row];
+    cell.textLabel.text = teacher.name;
+    cell.detailTextLabel.text = @"";
+    
+    return cell;
+}
+
+#pragma mark - UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    Teacher *selectedTeacher = self.teachers[indexPath.row];
+    
+    ViewController *controller = (ViewController *)[self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
+    
+    controller.currentTeacher = selectedTeacher;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@end

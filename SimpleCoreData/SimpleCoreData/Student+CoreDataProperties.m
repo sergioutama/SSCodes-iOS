@@ -17,5 +17,6 @@
 @dynamic name;
 @dynamic gender;
 @dynamic age;
+@dynamic teacher;
 
 @end

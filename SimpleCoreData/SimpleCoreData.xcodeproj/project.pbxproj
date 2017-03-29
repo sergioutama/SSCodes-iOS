@@ -14,9 +14,12 @@
 		558693061E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 558693041E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld */; };
 		558693081E8B40CF00B1B752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558693071E8B40CF00B1B752 /* Assets.xcassets */; };
 		5586930B1E8B40CF00B1B752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558693091E8B40CF00B1B752 /* LaunchScreen.storyboard */; };
-		558693161E8B447E00B1B752 /* Student+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693131E8B447E00B1B752 /* Student+CoreDataClass.m */; };
-		558693171E8B447E00B1B752 /* Student+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */; };
 		5586931A1E8B49B900B1B752 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693191E8B49B900B1B752 /* CoreDataManager.m */; };
+		558693421E8B5A4100B1B752 /* Teacher+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5586933B1E8B5A4100B1B752 /* Teacher+CoreDataClass.m */; };
+		558693431E8B5A4100B1B752 /* Teacher+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5586933D1E8B5A4100B1B752 /* Teacher+CoreDataProperties.m */; };
+		558693441E8B5A4100B1B752 /* Student+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5586933F1E8B5A4100B1B752 /* Student+CoreDataClass.m */; };
+		558693451E8B5A4100B1B752 /* Student+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693411E8B5A4100B1B752 /* Student+CoreDataProperties.m */; };
+		558693481E8B5B7C00B1B752 /* TeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693471E8B5B7C00B1B752 /* TeacherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +34,18 @@
 		558693071E8B40CF00B1B752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5586930A1E8B40CF00B1B752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5586930C1E8B40CF00B1B752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		558693121E8B447E00B1B752 /* Student+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataClass.h"; sourceTree = "<group>"; };
-		558693131E8B447E00B1B752 /* Student+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataClass.m"; sourceTree = "<group>"; };
-		558693141E8B447E00B1B752 /* Student+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataProperties.h"; sourceTree = "<group>"; };
-		558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataProperties.m"; sourceTree = "<group>"; };
 		558693181E8B49B900B1B752 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		558693191E8B49B900B1B752 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		5586933A1E8B5A4100B1B752 /* Teacher+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Teacher+CoreDataClass.h"; sourceTree = "<group>"; };
+		5586933B1E8B5A4100B1B752 /* Teacher+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Teacher+CoreDataClass.m"; sourceTree = "<group>"; };
+		5586933C1E8B5A4100B1B752 /* Teacher+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Teacher+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5586933D1E8B5A4100B1B752 /* Teacher+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Teacher+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5586933E1E8B5A4100B1B752 /* Student+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataClass.h"; sourceTree = "<group>"; };
+		5586933F1E8B5A4100B1B752 /* Student+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataClass.m"; sourceTree = "<group>"; };
+		558693401E8B5A4100B1B752 /* Student+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataProperties.h"; sourceTree = "<group>"; };
+		558693411E8B5A4100B1B752 /* Student+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataProperties.m"; sourceTree = "<group>"; };
+		558693461E8B5B7C00B1B752 /* TeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherViewController.h; sourceTree = "<group>"; };
+		558693471E8B5B7C00B1B752 /* TeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,16 +78,15 @@
 		558692F71E8B40CF00B1B752 /* SimpleCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				558693121E8B447E00B1B752 /* Student+CoreDataClass.h */,
-				558693131E8B447E00B1B752 /* Student+CoreDataClass.m */,
-				558693141E8B447E00B1B752 /* Student+CoreDataProperties.h */,
-				558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */,
+				5586931B1E8B4F4300B1B752 /* CoreData */,
 				558692FB1E8B40CF00B1B752 /* AppDelegate.h */,
 				558692FC1E8B40CF00B1B752 /* AppDelegate.m */,
 				558693181E8B49B900B1B752 /* CoreDataManager.h */,
 				558693191E8B49B900B1B752 /* CoreDataManager.m */,
 				558692FE1E8B40CF00B1B752 /* ViewController.h */,
 				558692FF1E8B40CF00B1B752 /* ViewController.m */,
+				558693461E8B5B7C00B1B752 /* TeacherViewController.h */,
+				558693471E8B5B7C00B1B752 /* TeacherViewController.m */,
 				558693011E8B40CF00B1B752 /* Main.storyboard */,
 				558693071E8B40CF00B1B752 /* Assets.xcassets */,
 				558693091E8B40CF00B1B752 /* LaunchScreen.storyboard */,
@@ -95,6 +103,21 @@
 				558692F91E8B40CF00B1B752 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5586931B1E8B4F4300B1B752 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5586933A1E8B5A4100B1B752 /* Teacher+CoreDataClass.h */,
+				5586933B1E8B5A4100B1B752 /* Teacher+CoreDataClass.m */,
+				5586933C1E8B5A4100B1B752 /* Teacher+CoreDataProperties.h */,
+				5586933D1E8B5A4100B1B752 /* Teacher+CoreDataProperties.m */,
+				5586933E1E8B5A4100B1B752 /* Student+CoreDataClass.h */,
+				5586933F1E8B5A4100B1B752 /* Student+CoreDataClass.m */,
+				558693401E8B5A4100B1B752 /* Student+CoreDataProperties.h */,
+				558693411E8B5A4100B1B752 /* Student+CoreDataProperties.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +194,14 @@
 			files = (
 				558693061E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld in Sources */,
 				5586931A1E8B49B900B1B752 /* CoreDataManager.m in Sources */,
-				558693171E8B447E00B1B752 /* Student+CoreDataProperties.m in Sources */,
 				558693001E8B40CF00B1B752 /* ViewController.m in Sources */,
 				558692FD1E8B40CF00B1B752 /* AppDelegate.m in Sources */,
-				558693161E8B447E00B1B752 /* Student+CoreDataClass.m in Sources */,
+				558693451E8B5A4100B1B752 /* Student+CoreDataProperties.m in Sources */,
+				558693421E8B5A4100B1B752 /* Teacher+CoreDataClass.m in Sources */,
+				558693441E8B5A4100B1B752 /* Student+CoreDataClass.m in Sources */,
 				558692FA1E8B40CF00B1B752 /* main.m in Sources */,
+				558693431E8B5A4100B1B752 /* Teacher+CoreDataProperties.m in Sources */,
+				558693481E8B5B7C00B1B752 /* TeacherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

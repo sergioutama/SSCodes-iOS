@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TeacherViewController.h
 //  SimpleCoreData
 //
 //  Created by Sergio Utama on 29/03/2017.
@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Teacher+CoreDataClass.h"
 
-@interface ViewController : UIViewController
-
-@property (nonatomic, strong) Teacher *currentTeacher;
+@interface TeacherViewController : UIViewController
 
 @end
-
