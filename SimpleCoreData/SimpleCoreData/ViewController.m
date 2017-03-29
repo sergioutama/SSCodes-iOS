@@ -11,7 +11,7 @@
 #import "Student+CoreDataClass.h"
 #import "CoreDataManager.h"
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAdd;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -33,6 +33,7 @@
 
 - (void)setupUI {
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self.buttonAdd addTarget:self action:@selector(buttonAddTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -44,9 +45,20 @@
 #pragma mark - Actions
 - (void)buttonAddTapped:(UIButton *)sender {
 
+    [self createNewStudent];
+    [self fetchData];
+    [self.tableView reloadData];
+
+}
+
+- (void)createNewStudent {
     
     Student *newStudent = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.managedObjectContext];
     newStudent.name = self.textField.text;
+    
+    // Establish relationship
+    newStudent.teacher = self.currentTeacher;
+    
     
     NSError *saveError = NULL;
     [self.managedObjectContext save:&saveError];
@@ -55,9 +67,6 @@
         return;
     }
     
-    [self fetchData];
-    [self.tableView reloadData];
-
 }
 
 - (void)fetchData {
@@ -66,10 +75,12 @@
     
     
     // set predicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@""];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"teacher.name == %@",self.currentTeacher.name];
     [studentFetchRequest setPredicate:predicate];
     
-
+    // sort
+    NSSortDescriptor *sortDecriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    [studentFetchRequest setSortDescriptors:@[sortDecriptor]];
     
     NSError *fetchError = NULL;
     
@@ -96,6 +107,11 @@
     cell.textLabel.text = student.name;
     
     return  cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

@@ -8,8 +8,14 @@
 
 #import "TeacherViewController.h"
 #import "Teacher+CoreDataClass.h"
+#import "Student+CoreDataClass.h"
 #import "CoreDataManager.h"
 #import "ViewController.h"
+
+typedef NS_ENUM(NSUInteger, DataState) {
+    DataStateFetched,
+    DataStateIntialized
+};
 
 @interface TeacherViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -17,15 +23,26 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *teachers;
 @property (strong, nonatomic) NSManagedObjectContext *context;
+
+@property (assign, nonatomic) DataState dataState;
+
 @end
 
 @implementation TeacherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+
     [self fetchTeachers];
     [self.tableView reloadData];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,9 +106,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TeacherCell" forIndexPath:indexPath];
     
-    Teacher *teacher = self.teachers[indexPath.row];
-    cell.textLabel.text = teacher.name;
-    cell.detailTextLabel.text = @"";
+    
+    Teacher *teacher = self.teachers[indexPath.row];// get teacher
+    
+    cell.textLabel.text = teacher.name; // set teacher name
+    
+    // get all students name
+    NSMutableString *allStudentsName = [@"" mutableCopy];
+    for (Student *student in teacher.student) {
+        [allStudentsName appendFormat:@"%@ ",student.name];
+    }
+    
+    cell.detailTextLabel.text = allStudentsName; // set all students name
+    
     
     return cell;
 }
