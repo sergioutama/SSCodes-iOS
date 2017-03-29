@@ -10,7 +10,5 @@
 
 @interface ViewController : UIViewController
 
-- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
-
 @end
 

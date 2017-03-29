@@ -16,6 +16,7 @@
 		5586930B1E8B40CF00B1B752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558693091E8B40CF00B1B752 /* LaunchScreen.storyboard */; };
 		558693161E8B447E00B1B752 /* Student+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693131E8B447E00B1B752 /* Student+CoreDataClass.m */; };
 		558693171E8B447E00B1B752 /* Student+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */; };
+		5586931A1E8B49B900B1B752 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 558693191E8B49B900B1B752 /* CoreDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		558693131E8B447E00B1B752 /* Student+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataClass.m"; sourceTree = "<group>"; };
 		558693141E8B447E00B1B752 /* Student+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataProperties.h"; sourceTree = "<group>"; };
 		558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataProperties.m"; sourceTree = "<group>"; };
+		558693181E8B49B900B1B752 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		558693191E8B49B900B1B752 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				558693151E8B447E00B1B752 /* Student+CoreDataProperties.m */,
 				558692FB1E8B40CF00B1B752 /* AppDelegate.h */,
 				558692FC1E8B40CF00B1B752 /* AppDelegate.m */,
+				558693181E8B49B900B1B752 /* CoreDataManager.h */,
+				558693191E8B49B900B1B752 /* CoreDataManager.m */,
 				558692FE1E8B40CF00B1B752 /* ViewController.h */,
 				558692FF1E8B40CF00B1B752 /* ViewController.m */,
 				558693011E8B40CF00B1B752 /* Main.storyboard */,
@@ -165,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558693061E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld in Sources */,
+				5586931A1E8B49B900B1B752 /* CoreDataManager.m in Sources */,
 				558693171E8B447E00B1B752 /* Student+CoreDataProperties.m in Sources */,
 				558693001E8B40CF00B1B752 /* ViewController.m in Sources */,
 				558692FD1E8B40CF00B1B752 /* AppDelegate.m in Sources */,
