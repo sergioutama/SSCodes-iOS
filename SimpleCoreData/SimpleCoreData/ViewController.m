@@ -8,7 +8,6 @@
 
 #import <CoreData/CoreData.h>
 #import "ViewController.h"
-#import "AppDelegate.h"
 #import "Student+CoreDataClass.h"
 
 @interface ViewController () <UITableViewDataSource>
@@ -37,11 +36,18 @@
 }
 
 - (void)setupCoreData {
+// Method 1 - Accessing AppDelegate to retrieve NSManagedObjectContext
+// Generally accessing AppDelegate is an expensive operation and should be avoided if possible
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = [appDelegate managedObjectContext];
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    self.managedObjectContext = [appDelegate managedObjectContext];
 }
 
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;{
+// Method 2 - Set NSManagedObjectContext from the class who present this ViewController
+// Better than accessing AppDelegate however this is not intuitive
+    _managedObjectContext = managedObjectContext;
+}
 
 #pragma mark - Actions
 - (void)buttonAddTapped:(UIButton *)sender {

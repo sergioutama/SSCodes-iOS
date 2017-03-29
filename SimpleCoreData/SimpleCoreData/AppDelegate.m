@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -19,6 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    // Method 2 : Let AppDelegate pass NSManagedObjectContext
+    // Depending on what our rootViewController is, this should be refactor as required
+    ViewController *controller = (ViewController *)self.window.rootViewController;
+    [controller setManagedObjectContext:self.managedObjectContext];
+    
     return YES;
 }
 
