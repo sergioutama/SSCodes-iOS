@@ -53,11 +53,27 @@ typedef NS_ENUM(NSUInteger, DataState) {
 #pragma mark - Setup
 - (void)setupUI {
     
+    UIBarButtonItem *barButtonAdd = [[UIBarButtonItem alloc] init];
+    
+    [barButtonAdd setTarget:self];
+    [barButtonAdd setAction:@selector(buttonAddTapped:)];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     [self.buttonAdd addTarget:self action:@selector(buttonAddTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     self.context = [[CoreDataManager shared] managedObjectContext];
+    
+    
     
 }
 

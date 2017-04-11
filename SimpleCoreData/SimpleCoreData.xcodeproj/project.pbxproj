@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55575B201E934B7900613B8C /* objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 55575B1F1E934B7900613B8C /* objc.m */; };
 		558692FA1E8B40CF00B1B752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 558692F91E8B40CF00B1B752 /* main.m */; };
 		558692FD1E8B40CF00B1B752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 558692FC1E8B40CF00B1B752 /* AppDelegate.m */; };
 		558693001E8B40CF00B1B752 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558692FF1E8B40CF00B1B752 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55575B1E1E934B7900613B8C /* objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objc.h; sourceTree = "<group>"; };
+		55575B1F1E934B7900613B8C /* objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = objc.m; sourceTree = "<group>"; };
 		558692F51E8B40CF00B1B752 /* SimpleCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558692F91E8B40CF00B1B752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		558692FB1E8B40CF00B1B752 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		558693411E8B5A4100B1B752 /* Student+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataProperties.m"; sourceTree = "<group>"; };
 		558693461E8B5B7C00B1B752 /* TeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherViewController.h; sourceTree = "<group>"; };
 		558693471E8B5B7C00B1B752 /* TeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherViewController.m; sourceTree = "<group>"; };
+		55BB11381E8CA5B10057FF07 /* SimpleCoreData 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SimpleCoreData 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				558693461E8B5B7C00B1B752 /* TeacherViewController.h */,
 				558693471E8B5B7C00B1B752 /* TeacherViewController.m */,
 				558693011E8B40CF00B1B752 /* Main.storyboard */,
+				55575B1E1E934B7900613B8C /* objc.h */,
+				55575B1F1E934B7900613B8C /* objc.m */,
 				558693071E8B40CF00B1B752 /* Assets.xcassets */,
 				558693091E8B40CF00B1B752 /* LaunchScreen.storyboard */,
 				5586930C1E8B40CF00B1B752 /* Info.plist */,
@@ -198,6 +204,7 @@
 				558692FD1E8B40CF00B1B752 /* AppDelegate.m in Sources */,
 				558693451E8B5A4100B1B752 /* Student+CoreDataProperties.m in Sources */,
 				558693421E8B5A4100B1B752 /* Teacher+CoreDataClass.m in Sources */,
+				55575B201E934B7900613B8C /* objc.m in Sources */,
 				558693441E8B5A4100B1B752 /* Student+CoreDataClass.m in Sources */,
 				558692FA1E8B40CF00B1B752 /* main.m in Sources */,
 				558693431E8B5A4100B1B752 /* Teacher+CoreDataProperties.m in Sources */,
@@ -360,6 +367,7 @@
 				558693111E8B40CF00B1B752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -367,9 +375,10 @@
 		558693041E8B40CF00B1B752 /* SimpleCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				55BB11381E8CA5B10057FF07 /* SimpleCoreData 2.xcdatamodel */,
 				558693051E8B40CF00B1B752 /* SimpleCoreData.xcdatamodel */,
 			);
-			currentVersion = 558693051E8B40CF00B1B752 /* SimpleCoreData.xcdatamodel */;
+			currentVersion = 55BB11381E8CA5B10057FF07 /* SimpleCoreData 2.xcdatamodel */;
 			path = SimpleCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
